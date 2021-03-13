@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import { AppContext } from './context';
 
-function App() {
-	return <div className="App">hello world</div>;
+export default function App(): ReactElement {
+	return (
+		<AppContext>
+			<AppContent />
+		</AppContext>
+	);
 }
 
-export default App;
+function AppContent(): ReactElement {
+	return <div className="App">hello world</div>;
+}
